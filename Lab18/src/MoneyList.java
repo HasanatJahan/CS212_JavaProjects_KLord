@@ -1,4 +1,4 @@
-// LinkedList.java
+// MoneyList.java
 //
 // This version uses three instance variables,
 // a pointer to the first node, a pointer to
@@ -15,19 +15,19 @@
 /**
  * Encapsulates a linked list of <code>String</code>.
  */
-public class LinkedList {
+public class MoneyList {
 
     /** First node in linked list - dummy node */
-    private ListNode first = new ListNode(null);
+    private MoneyNode first = new MoneyNode(null);
 
     /** Last node in linked list */
-    private ListNode last = first;
+    private MoneyNode last = first;
 
     /** Number of data items in the list. */
     private int length = 0;
 
     /**
-     * Gets the number of data values currently stored in this LinkedList.
+     * Gets the number of data values currently stored in this MoneyList.
      *
      * @return the number of elements in the list.
      */
@@ -37,7 +37,7 @@ public class LinkedList {
     }
 
     /**
-     * Appends a String data element to this LinkedList.
+     * Appends a String data element to this MoneyList.
      *
      * @param data
      *            the data element to be appended.
@@ -45,7 +45,7 @@ public class LinkedList {
     public void append(String d) {
         // TODO Code here for append
         //create the new list node
-        ListNode newNode = new ListNode(d);
+        MoneyNode newNode = new MoneyNode(d);
         //change to point to the new node
         last.next= newNode;
         //change the last node
@@ -56,19 +56,19 @@ public class LinkedList {
 
     /**
      * Prepends (adds to the beginning) a String data element to this
-     * LinkedList.
+     * MoneyList.
      *
      * @param data
      *            the data element to be prepended.
      */
     public void prepend(String d) {
         // TODO Code here for prepend
-        ListNode newNode= new ListNode(d);
+        MoneyNode newNode= new MoneyNode(d);
         //p is the node after the first node
-        ListNode p = first.next;
+        MoneyNode p = first.next;
         newNode.next = p;
         if(p==null){
-            //if the linkedlist is empty
+            //if the Moneylist is empty
             last = newNode;
         }
         first.next= newNode;
@@ -79,7 +79,7 @@ public class LinkedList {
      *         space character
      */
     public String toString() {
-        ListNode p = first.next;
+        MoneyNode p = first.next;
         String returnString = "";
         while (p != null) {
             returnString += p.data + " ";
@@ -89,25 +89,25 @@ public class LinkedList {
     }
 
     /**
-     * Determines whether this ShortSequenceLinkedList is equal in value to the
+     * Determines whether this MoneyList is equal in value to the
      * parameter object. They are equal if the parameter is of class
-     * ShortSequenceLinkedList and the two objects contain the same short
+     * MoneyList and the two objects contain the same short
      * integer values at each index.
      *
      * @param other
-     *            the object to be compared to this ShortSequenceLinkedList
+     *            the object to be compared to this MoneyList
      *
      * @return <code>true</code> if the parameter object is a
-     *         ShortSequenceLinkedList containing the same numbers at each index
-     *         as this ShortSequenceLinkedList, <code>false</code> otherwise.
+     *         MoneyList containing the same numbers at each index
+     *         as this MoneyList, <code>false</code> otherwise.
      */
     public boolean equals(Object other) {
         if (other == null || getClass() != other.getClass()
-                || length != ((LinkedList) other).length)
+                || length != ((MoneyList) other).length)
             return false;
 
-        ListNode nodeThis = first;
-        ListNode nodeOther = ((LinkedList) other).first;
+        MoneyNode nodeThis = first;
+        MoneyNode nodeOther = ((MoneyList) other).first;
         while (nodeThis != null) {
             // Since the two linked lists are the same length,
             // they should reach null on the same iteration.
@@ -122,4 +122,4 @@ public class LinkedList {
         return true;
     } // method equals
 
-} // class LinkedList
+} // class MoneyList
