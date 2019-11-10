@@ -12,6 +12,11 @@ public abstract class CandleList {
         length = 0;
     }//no argument constructor
 
+    /**
+     * The append method adds a new node to the
+     * CandleList
+     * @param c: this is a candle object
+     */
     public static void append(Candle c){
         CandleNode newNode = new CandleNode(c);
         last.next = null;

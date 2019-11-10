@@ -5,7 +5,7 @@ public class UnsortedCandleList extends CandleList {
 
     /**
      * Method to add a new candle to the unsorted linked list
-     * @param  candle c
+     * @param c: a candle
      */
     public static void add(Candle c){
         UnsortedCandleList.append(c);
