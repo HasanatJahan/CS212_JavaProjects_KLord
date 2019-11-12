@@ -1,3 +1,12 @@
+/**
+ * The UnSortedCandleList class is an extension of the
+ * CandleList class with an add method
+ *
+ * @author Hasanat Jahan
+ * @lab-section: 11H Cuiyuan Wang
+ * @lab-time TueThu 3:50PM-4:40PM
+ */
+
 public class UnsortedCandleList extends CandleList {
     public UnsortedCandleList(){
         super();
@@ -7,7 +16,7 @@ public class UnsortedCandleList extends CandleList {
      * Method to add a new candle to the unsorted linked list
      * @param c: a candle
      */
-    public static void add(Candle c){
-        UnsortedCandleList.append(c);
+    public void add(Candle c){
+        append(c);
     }//add
 }

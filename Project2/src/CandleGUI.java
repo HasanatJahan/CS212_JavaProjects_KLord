@@ -33,17 +33,17 @@ public class CandleGUI extends JFrame {
         pack();
         setVisible(true);
 
-        displayUnsortedCandle(candleList1, textAreaLeft);
-        displaySortedCandle(candleList2, textAreaRight);
+        displayCandle(candleList1, textAreaLeft);
+        displayCandle(candleList2, textAreaRight);
     }
 
 
     /**
-     * Method that fills the text area with the candles
+     * Method that fills the text area with theunsorted candles
      * @param candleList: the unsorted candle linked list
      *        myText: the JTextArea to display the results
      */
-    public static void displayUnsortedCandle(UnsortedCandleList candleList, JTextArea myText){
+    public static void displayCandle(CandleList candleList, JTextArea myText){
         CandleNode current = candleList.first.next;
         while(current!=null){
             myText.append(current.data + "\n");
@@ -51,16 +51,5 @@ public class CandleGUI extends JFrame {
         }
     }
 
-    /**
-     * Method that fills the text area with the candles
-     * @param candleList: the sorted candle linked list
-     *        myText: the JTextArea to display the results
-     */
-    public static void displaySortedCandle(SortedCandleList candleList, JTextArea myText){
-        CandleNode current = candleList.first.next;
-        while(current!=null){
-            myText.append(current.data + "\n");
-            current= current.next;
-        }
-    }
+//
 }
