@@ -39,8 +39,8 @@ public class CandleGUI extends JFrame {
 
 
     /**
-     * Method that fills the text area with theunsorted candles
-     * @param candleList: the unsorted candle linked list
+     * Method that fills the text area with candles
+     * @param candleList: the candle linked list
      *        myText: the JTextArea to display the results
      */
     public static void displayCandle(CandleList candleList, JTextArea myText){
