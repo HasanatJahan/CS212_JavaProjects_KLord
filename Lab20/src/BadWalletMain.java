@@ -6,24 +6,29 @@ public class BadWalletMain {
 
     public static void main (String[] args) {
         // try / catch begins here
-        for (int i=0;i<dataSource.length;i++){
+        for (int i=0;i<dataSource.length;i++) {
             char dataItem = dataSource[i].charAt(0);
             if (dataItem == 'B') {
-                int billValue= Integer.parseInt(dataSource[i].substring(1,dataSource[i].length()));
-                myWallet.addToWallet(new Bill(billValue));
+                try {
+                    int billValue = Integer.parseInt(dataSource[i].substring(1, dataSource[i].length()));
+                    myWallet.addToWallet(new Bill(billValue));
+                } catch (IllegalBillException e) {
+                    System.out.println(e);
+                    e.printStackTrace();
+                } catch (NumberFormatException e) {
+                    System.out.println(e);
+                    e.printStackTrace();
+                }
+            } else {
+                if (dataItem == 'Q')
+                    myWallet.addToWallet(new Quarter());
+                if (dataItem == 'D')
+                    myWallet.addToWallet(new Dime());
+                if (dataItem == 'N')
+                    myWallet.addToWallet(new Nickel());
+                if (dataItem == 'P')
+                    myWallet.addToWallet(new Penny());
             }
-            else
-            if (dataItem == 'Q')
-                myWallet.addToWallet(new Quarter());
-            else
-            if (dataItem == 'D')
-                myWallet.addToWallet(new Dime());
-            else
-            if (dataItem == 'N')
-                myWallet.addToWallet(new Nickel());
-            else
-            if (dataItem == 'P')
-                myWallet.addToWallet(new Penny());
         }
 
         myWallet.print();
